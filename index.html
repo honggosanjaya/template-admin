@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <section class="sidebar">
+      <div class="sidebar-brand">
+        <img src="./img/berry-removebg-preview.png" alt="" />
+        <label for="nav-toggle">
+          <i class="bi bi-list"></i>
+        </label>
+      </div>
+
+      <div class="sidebar-menu">
+        <div class="sidebar-dashboard">
+          <h1>Dashboard</h1>
+          <ul>
+            <li>
+              <a href="" class="active"><i class="bi bi-speedometer2"></i><span>Default</span></a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-tv"></i><span>Analytics</span></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="sidebar-widget">
+          <h1>Widget</h1>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-vinyl"></i><span>Statistic</span></a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-clipboard-data"></i><span>Data</span></a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-bar-chart-line"></i><span>Chart</span></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="sidebar-application">
+          <h1>Application</h1>
+          <ul>
+            <li>
+              <a href=""><i class="bi bi-person-check"></i><span>Users</span></a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-basket2"></i><span>Customer</span></a>
+            </li>
+            <li>
+              <a href=""><i class="bi bi-envelope"></i><span>Mail</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <header>
+        <div class="search-wrapper">
+          <i class="bi bi-search"></i>
+          <input type="search" placeholder="Search" />
+          <i class="bi bi-sliders"></i>
+        </div>
+
+        <div class="icon-wrapper">
+          <div class="bi bi-translate"></div>
+          <div class="bi bi-bell"></div>
+        </div>
+      </header>
+
+      <main>
+        <div class="main-element">
+          <div class="card-container">
+            <div class="card card__earning">
+              <div class="card-icon">
+                <i class="bi bi-cash-coin"></i>
+                <i class="bi bi-three-dots"></i>
+              </div>
+              <div>
+                <h1>$500.00</h1>
+                <i class="bi bi-question-circle"></i>
+              </div>
+              <h2>Total Earning</h2>
+            </div>
+
+            <div class="card card__order">
+              <div class="card-icon">
+                <i class="bi bi-bag-check"></i>
+                <i class="bi bi-three-dots"></i>
+              </div>
+              <div>
+                <h1>$961</h1>
+                <i class="bi bi-question-circle"></i>
+              </div>
+              <h2>Total Order</h2>
+            </div>
+          </div>
+          <div class="production-graph">
+            <img src="./img/graph.png" alt="" />
+          </div>
+        </div>
+
+        <aside class="aside-element">
+          <div class="card-income income">
+            <i class="bi bi-shop-window"></i>
+            <div>
+              <h2>$203k</h2>
+              <p>Total Income</p>
+            </div>
+          </div>
+
+          <div class="card-income total-income">
+            <i class="bi bi-bank"></i>
+            <div>
+              <h2>$203k</h2>
+              <p>Total Income</p>
+            </div>
+          </div>
+
+          <div class="popular-stock">
+            <div class="popular-stock__header">
+              <h2>Popular Stocks</h2>
+              <i class="bi bi-three-dots"></i>
+            </div>
+
+            <div class="stock">
+              <div class="stock__name">
+                <h3>Bajaj Finery</h3>
+                <p class="profit">10% profit</p>
+              </div>
+              <div class="stock_cash">
+                <h3>$1839.00</h3>
+                <i class="bi bi-chevron-up profit-up"></i>
+              </div>
+            </div>
+            <hr />
+            <div class="stock">
+              <div class="stock__name">
+                <h3>TTML</h3>
+                <p class="unprofit">10% loss</p>
+              </div>
+              <div class="stock_cash">
+                <h3>$100.00</h3>
+                <i class="bi bi-chevron-down profit-down"></i>
+              </div>
+            </div>
+            <hr />
+            <div class="stock">
+              <div class="stock__name">
+                <h3>Reliance</h3>
+                <p class="profit">10% profit</p>
+              </div>
+              <div class="stock_cash">
+                <h3>$200.00</h3>
+                <i class="bi bi-chevron-up profit-up"></i>
+              </div>
+            </div>
+            <hr />
+            <div class="stock">
+              <div class="stock__name">
+                <h3>TTML</h3>
+                <p class="unprofit">10% loss</p>
+              </div>
+              <div class="stock_cash">
+                <h3>$189.00</h3>
+                <i class="bi bi-chevron-down profit-down"></i>
+              </div>
+            </div>
+            <hr />
+            <div class="stock">
+              <div class="stock__name">
+                <h3>Stolon</h3>
+                <p class="unprofit">10% loss</p>
+              </div>
+              <div class="stock_cash">
+                <h3>$189.00</h3>
+                <i class="bi bi-chevron-down profit-down"></i>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
