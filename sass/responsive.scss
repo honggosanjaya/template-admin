@@ -1,0 +1,142 @@
+@media only screen and (max-width: 960px) {
+  .main-content {
+    main {
+      padding: 32px 20px;
+      .two-view {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .main-element {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .card-container,
+        .table {
+          width: 100%;
+        }
+      }
+
+      .aside-element {
+        margin-top: 30px;
+        width: 100%;
+
+        .card-income.expences {
+          margin-top: 30px;
+        }
+
+        .social-source {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .main-content {
+    header {
+      .icon-wrapper .bi,
+      .header-brand {
+        display: none;
+      }
+
+      .admin-wrapper {
+        .ellipse {
+          bottom: 0;
+        }
+      }
+    }
+
+    main {
+      .table {
+        width: 100%;
+        .table__body {
+          thead {
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+
+          tr {
+            display: block;
+            margin-bottom: 15px;
+          }
+
+          td {
+            display: block;
+            text-align: right;
+            border-top: none;
+            border-bottom: 1px solid #f0f0f0;
+          }
+
+          td::before {
+            content: attr(data);
+            float: left;
+            font-weight: 700;
+          }
+
+          td:last-child {
+            border-bottom: 2px solid #c7c7c7;
+            justify-content: space-between;
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .aside-element {
+        .coba {
+          grid-template-columns: 1fr;
+
+          .piechart {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 12px;
+  }
+
+  .main-content {
+    header {
+      .search-wrapper {
+        width: 200px;
+      }
+      .admin-info {
+        display: none;
+      }
+    }
+
+    main {
+      .main-element {
+        .card-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+
+      .aside-element {
+        .social-source {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

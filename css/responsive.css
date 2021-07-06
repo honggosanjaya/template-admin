@@ -1,0 +1,106 @@
+@media only screen and (max-width: 960px) {
+  .main-content main {
+    padding: 32px 20px;
+  }
+  .main-content main .two-view {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .main-content main .main-element {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-content main .main-element .card-container,
+  .main-content main .main-element .table {
+    width: 100%;
+  }
+  .main-content main .aside-element {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .main-content main .aside-element .card-income.expences {
+    margin-top: 30px;
+  }
+  .main-content main .aside-element .social-source {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .main-content header .icon-wrapper .bi,
+  .main-content header .header-brand {
+    display: none;
+  }
+  .main-content header .admin-wrapper .ellipse {
+    bottom: 0;
+  }
+  .main-content main .table {
+    width: 100%;
+  }
+  .main-content main .table .table__body thead {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .main-content main .table .table__body tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+  .main-content main .table .table__body td {
+    display: block;
+    text-align: right;
+    border-top: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .main-content main .table .table__body td::before {
+    content: attr(data);
+    float: left;
+    font-weight: 700;
+  }
+  .main-content main .table .table__body td:last-child {
+    border-bottom: 2px solid #c7c7c7;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-content main .table .table__body td:last-child span {
+    display: none;
+  }
+  .main-content main .aside-element .coba {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .main-content main .aside-element .coba .piechart {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 12px;
+  }
+  .main-content header .search-wrapper {
+    width: 200px;
+  }
+  .main-content header .admin-info {
+    display: none;
+  }
+  .main-content main .main-element .card-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .main-content main .aside-element .social-source {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>
     <input type="checkbox" id="nav-toggle" />
-    <section class="sidebar">
+
+    <section class="sidebar" data-aos="fade-right" data-aos-duration="2000">
       <div class="sidebar-brand">
-        <img src="./img/berry-removebg-preview.png" alt="" />
+        <img src="./img/stock-logo.png" alt="" />
         <label for="nav-toggle">
           <i class="bi bi-list"></i>
         </label>
@@ -22,26 +26,10 @@
           <h1>Dashboard</h1>
           <ul>
             <li>
-              <a href="" class="active"><i class="bi bi-speedometer2"></i><span>Default</span></a>
+              <a href="#" class="active"><i class="bi bi-speedometer2"></i><span>Default</span></a>
             </li>
             <li>
-              <a href=""><i class="bi bi-tv"></i><span>Analytics</span></a>
-            </li>
-          </ul>
-        </div>
-        <hr />
-
-        <div class="sidebar-widget">
-          <h1>Widget</h1>
-          <ul>
-            <li>
-              <a href=""><i class="bi bi-vinyl"></i><span>Statistic</span></a>
-            </li>
-            <li>
-              <a href=""><i class="bi bi-clipboard-data"></i><span>Data</span></a>
-            </li>
-            <li>
-              <a href=""><i class="bi bi-bar-chart-line"></i><span>Chart</span></a>
+              <a href="#"><i class="bi bi-tv"></i><span>Analytics</span></a>
             </li>
           </ul>
         </div>
@@ -51,13 +39,48 @@
           <h1>Application</h1>
           <ul>
             <li>
-              <a href=""><i class="bi bi-person-check"></i><span>Users</span></a>
+              <a href="#"><i class="bi bi-person-square"></i><span>Staff</span></a>
             </li>
             <li>
-              <a href=""><i class="bi bi-basket2"></i><span>Customer</span></a>
+              <a href="#"><i class="bi bi-people-fill"></i><span>Customer</span></a>
             </li>
             <li>
-              <a href=""><i class="bi bi-envelope"></i><span>Mail</span></a>
+              <a href="#"><i class="bi bi-images"></i><span>Gallery</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-basket2"></i><span>Order</span></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="sidebar-component">
+          <h1>Component</h1>
+          <ul>
+            <li>
+              <a href="#"><i class="bi bi-palette"></i><span>UI Component</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-gear-wide-connected"></i><span>Widget</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-ui-checks"></i><span>Form</span></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="sidebar-widget">
+          <h1>Widget</h1>
+          <ul>
+            <li>
+              <a href="#"><i class="bi bi-vinyl"></i><span>Statistic</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-clipboard-data"></i><span>Data</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-bar-chart-line"></i><span>Chart</span></a>
             </li>
           </ul>
         </div>
@@ -66,131 +89,290 @@
 
     <section class="main-content">
       <header>
+        <div class="header-brand">
+          <img src="./img/stock-logo.png" alt="" />
+        </div>
+
         <div class="search-wrapper">
           <i class="bi bi-search"></i>
           <input type="search" placeholder="Search" />
-          <i class="bi bi-sliders"></i>
         </div>
 
-        <div class="icon-wrapper">
-          <div class="bi bi-translate"></div>
-          <div class="bi bi-bell"></div>
+        <div class="admin-wrapper">
+          <img src="./img/alex-suprun.jpg" alt="" />
+          <div class="ellipse"></div>
+          <div class="admin-info">
+            <h4>Alex Suprun</h4>
+            <small>Admin</small>
+          </div>
         </div>
       </header>
 
       <main>
-        <div class="main-element">
-          <div class="card-container">
-            <div class="card card__earning">
-              <div class="card-icon">
-                <i class="bi bi-cash-coin"></i>
-                <i class="bi bi-three-dots"></i>
+        <div class="two-view">
+          <section class="main-element">
+            <div class="card-container" data-aos="fade-in">
+              <div class="card card__earning">
+                <div class="card-icon">
+                  <i class="bi bi-cash-coin"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+                <div>
+                  <h1 class="counter" data-target="500">0</h1>
+                </div>
+                <h2>Total Income</h2>
               </div>
+
+              <div class="card card__expences">
+                <div class="card-icon">
+                  <i class="bi bi-cash-stack"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+                <div>
+                  <h1 class="counter" data-target="300">0</h1>
+                </div>
+                <h2>Total Expences</h2>
+              </div>
+
+              <div class="card card__cash">
+                <div class="card-icon">
+                  <i class="bi bi-wallet2"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+                <div>
+                  <h1 class="counter" data-target="100">0</h1>
+                </div>
+                <h2>Cash on Hand</h2>
+              </div>
+
+              <div class="card card__order">
+                <div class="card-icon">
+                  <i class="bi bi-bag-check"></i>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+                <div>
+                  <h1 class="counter" data-target="1000">0</h1>
+                </div>
+                <h2>Total Order</h2>
+              </div>
+            </div>
+          </section>
+
+          <aside class="aside-element" data-aos="fade-left" data-aos-duration="2000">
+            <div class="card-income income">
+              <i class="bi bi-bank"></i>
               <div>
-                <h1>$500.00</h1>
-                <i class="bi bi-question-circle"></i>
+                <h2>$500</h2>
+                <p>Total Income</p>
               </div>
-              <h2>Total Earning</h2>
             </div>
 
-            <div class="card card__order">
-              <div class="card-icon">
-                <i class="bi bi-bag-check"></i>
-                <i class="bi bi-three-dots"></i>
-              </div>
+            <div class="card-income expences">
+              <i class="bi bi-shop-window"></i>
               <div>
-                <h1>$961</h1>
-                <i class="bi bi-question-circle"></i>
+                <h2>$300</h2>
+                <p>Total Expences</p>
               </div>
-              <h2>Total Order</h2>
             </div>
-          </div>
-          <div class="production-graph">
-            <img src="./img/graph.png" alt="" />
-          </div>
+
+            <div id="piechart"></div>
+          </aside>
         </div>
 
-        <aside class="aside-element">
-          <div class="card-income income">
-            <i class="bi bi-shop-window"></i>
-            <div>
-              <h2>$203k</h2>
-              <p>Total Income</p>
-            </div>
-          </div>
-
-          <div class="card-income total-income">
-            <i class="bi bi-bank"></i>
-            <div>
-              <h2>$203k</h2>
-              <p>Total Income</p>
-            </div>
-          </div>
-
-          <div class="popular-stock">
-            <div class="popular-stock__header">
-              <h2>Popular Stocks</h2>
-              <i class="bi bi-three-dots"></i>
+        <div class="two-view">
+          <section>
+            <div class="graph" data-aos="fade-up">
+              <h1>Total Profit Report</h1>
+              <canvas id="lineChart"></canvas>
             </div>
 
-            <div class="stock">
-              <div class="stock__name">
-                <h3>Bajaj Finery</h3>
-                <p class="profit">10% profit</p>
+            <div class="graph sales-graph" data-aos="fade-up">
+              <h1>Product Sales Report</h1>
+              <canvas id="barChart"></canvas>
+            </div>
+          </section>
+
+          <section class="aside-element" data-aos="fade-left" data-aos-duration="2000">
+            <div class="social-source">
+              <div class="social-source__header">
+                <h1>Sales By Social Source</h1>
               </div>
-              <div class="stock_cash">
-                <h3>$1839.00</h3>
-                <i class="bi bi-chevron-up profit-up"></i>
+              <div class="sales facebook">
+                <div class="social-media">
+                  <div class="tooltip">Facebook</div>
+                  <i class="bi bi-facebook"></i>
+                  <h3>Facebook</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>500 sales</h3>
+                </div>
+              </div>
+              <div class="sales instagram">
+                <div class="social-media">
+                  <div class="tooltip">Instagram</div>
+                  <i class="bi bi-instagram"></i>
+                  <h3>Instagram</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>500 sales</h3>
+                </div>
+              </div>
+              <div class="sales whatsapp">
+                <div class="social-media">
+                  <div class="tooltip">Whatsapp</div>
+                  <i class="bi bi-whatsapp"></i>
+                  <h3>Whatsapp</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>900 sales</h3>
+                </div>
+              </div>
+              <div class="sales twitter">
+                <div class="social-media">
+                  <div class="tooltip">Twitter</div>
+                  <i class="bi bi-twitter"></i>
+                  <h3>Twitter</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>300 sales</h3>
+                </div>
+              </div>
+              <div class="sales youtube">
+                <div class="social-media">
+                  <div class="tooltip">Youtube</div>
+                  <i class="bi bi-youtube"></i>
+                  <h3>Youtube</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>360 sales</h3>
+                </div>
+              </div>
+              <div class="sales online-marketplace">
+                <div class="social-media">
+                  <div class="tooltip">
+                    Online <br />
+                    Marketplace
+                  </div>
+                  <i class="bi bi-shop"></i>
+                  <h3>Online Marketplace</h3>
+                </div>
+                <div class="social-sales">
+                  <h3>1000 sales</h3>
+                </div>
+              </div>
+              <div class="sales-detail">
+                <p>View Details <i class="bi bi-arrow-right"></i></p>
               </div>
             </div>
-            <hr />
-            <div class="stock">
-              <div class="stock__name">
-                <h3>TTML</h3>
-                <p class="unprofit">10% loss</p>
-              </div>
-              <div class="stock_cash">
-                <h3>$100.00</h3>
-                <i class="bi bi-chevron-down profit-down"></i>
-              </div>
-            </div>
-            <hr />
-            <div class="stock">
-              <div class="stock__name">
-                <h3>Reliance</h3>
-                <p class="profit">10% profit</p>
-              </div>
-              <div class="stock_cash">
-                <h3>$200.00</h3>
-                <i class="bi bi-chevron-up profit-up"></i>
+
+            <div class="total-sale">
+              <h1>Total Sale</h1>
+              <div class="circle-wrap">
+                <div class="circle">
+                  <div class="mask full">
+                    <div class="fill"></div>
+                  </div>
+                  <div class="mask half">
+                    <div class="fill"></div>
+                  </div>
+                  <div class="inside-circle">70%</div>
+                </div>
               </div>
             </div>
-            <hr />
-            <div class="stock">
-              <div class="stock__name">
-                <h3>TTML</h3>
-                <p class="unprofit">10% loss</p>
-              </div>
-              <div class="stock_cash">
-                <h3>$189.00</h3>
-                <i class="bi bi-chevron-down profit-down"></i>
-              </div>
-            </div>
-            <hr />
-            <div class="stock">
-              <div class="stock__name">
-                <h3>Stolon</h3>
-                <p class="unprofit">10% loss</p>
-              </div>
-              <div class="stock_cash">
-                <h3>$189.00</h3>
-                <i class="bi bi-chevron-down profit-down"></i>
-              </div>
-            </div>
+          </section>
+        </div>
+
+        <div class="table" data-aos="fade-up">
+          <div class="table__header">
+            <h1>Recent Orders</h1>
+            <button class="button button--mimas"><span>Show All</span></button>
           </div>
-        </aside>
+          <div class="table__body">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                  <th>Customer</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="./img/shoe.png" alt="" /></td>
+                  <td>Shoe</td>
+                  <td>2</td>
+                  <td>$50.00</td>
+                  <td>$100.00</td>
+                  <td>Honggo Sanjaya</td>
+                  <td><span class="status orange"></span>Transit</td>
+                </tr>
+
+                <tr>
+                  <td><img src="./img/jeans.png" alt="" /></td>
+                  <td>Jeans</td>
+                  <td>10</td>
+                  <td>$30.00</td>
+                  <td>$300.00</td>
+                  <td>Jakob Owens</td>
+                  <td><span class="status red"></span>Canceled</td>
+                </tr>
+
+                <tr>
+                  <td><img src="./img/hat.png" alt="" /></td>
+                  <td>Hat</td>
+                  <td>1</td>
+                  <td>$15.00</td>
+                  <td>$15.00</td>
+                  <td>Waldemar Brandt</td>
+                  <td><span class="status green"></span>Delivered</td>
+                </tr>
+
+                <tr>
+                  <td><img src="./img/backpack.png" alt="" /></td>
+                  <td>Backpack</td>
+                  <td>5</td>
+                  <td>$30.00</td>
+                  <td>$150.00</td>
+                  <td>Micheal Copley</td>
+                  <td><span class="status green"></span>Delivered</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </main>
+
+      <footer>
+        <p>2021 &copy - Designed with <i class="bi bi-heart-fill"></i></p>
+        <div class="icon-wrapper">
+          <div class="icon facebook">
+            <span><i class="bi bi-facebook"></i></span>
+          </div>
+          <div class="icon twitter">
+            <span><i class="bi bi-twitter"></i></span>
+          </div>
+          <div class="icon instagram">
+            <span><i class="bi bi-instagram"></i></span>
+          </div>
+          <div class="icon youtube">
+            <span><i class="bi bi-youtube"></i></span>
+          </div>
+        </div>
+      </footer>
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
     <script src="./js/main.js"></script>
+    <script src="./js/chart.js"></script>
   </body>
 </html>
