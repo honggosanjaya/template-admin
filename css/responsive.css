@@ -1,30 +1,34 @@
 @media only screen and (max-width: 960px) {
-  .main-content main {
-    padding: 32px 20px;
-  }
-  .main-content main .two-view {
+  main .two-column--primary {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    gap: 20px;
+    grid-row-gap: 20px;
   }
-  .main-content main .main-element {
+  main .two-column--primary .main-element {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
-  .main-content main .main-element .card-container,
-  .main-content main .main-element .table {
+  main .two-column--primary .main-element .card-container,
+  main .two-column--primary .main-element .table {
     width: 100%;
   }
-  .main-content main .aside-element {
+  main .two-column--primary .aside-element {
     margin-top: 30px;
     width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  .main-content main .aside-element .card-income.expences {
-    margin-top: 30px;
+  main .two-column--primary .aside-element .total-sale {
+    margin-top: 0;
   }
-  .main-content main .aside-element .social-source {
-    margin-top: 30px;
+  main .two-column--secondary {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-row-gap: 20px;
   }
 }
 
@@ -32,17 +36,24 @@
   html {
     font-size: 14px;
   }
-  .main-content header .icon-wrapper .bi,
-  .main-content header .header-brand {
+  header .icon-wrapper .bi,
+  header .header-brand {
     display: none;
   }
-  .main-content header .admin-wrapper .ellipse {
+  header .admin-wrapper .ellipse {
     bottom: 0;
   }
-  .main-content main .table {
+  main .two-column--secondary .left-element .graph {
+    margin-top: 30px;
+    padding: 15px;
+  }
+  main .two-column--secondary .right-element .social-source {
+    margin-top: 10px;
+  }
+  main .table {
     width: 100%;
   }
-  .main-content main .table .table__body thead {
+  main .table .table__body thead {
     clip: rect(0 0 0 0);
     height: 1px;
     margin: -1px;
@@ -51,36 +62,36 @@
     position: absolute;
     width: 1px;
   }
-  .main-content main .table .table__body tr {
+  main .table .table__body tr {
     display: block;
     margin-bottom: 15px;
   }
-  .main-content main .table .table__body td {
+  main .table .table__body td {
     display: block;
     text-align: right;
     border-top: none;
     border-bottom: 1px solid #f0f0f0;
   }
-  .main-content main .table .table__body td::before {
+  main .table .table__body td::before {
     content: attr(data);
     float: left;
     font-weight: 700;
   }
-  .main-content main .table .table__body td:last-child {
+  main .table .table__body td:last-child {
     border-bottom: 2px solid #c7c7c7;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .main-content main .table .table__body td:last-child span {
+  main .table .table__body td:last-child span {
     display: none;
   }
-  .main-content main .aside-element .coba {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  footer .icon-wrapper .icon span {
+    height: 30px;
+    width: 30px;
   }
-  .main-content main .aside-element .coba .piechart {
-    width: 100%;
+  footer .icon-wrapper .icon span i {
+    font-size: 1.2rem;
   }
 }
 
@@ -88,19 +99,43 @@
   html {
     font-size: 12px;
   }
-  .main-content header .search-wrapper {
-    width: 200px;
+  header {
+    padding: 10px;
   }
-  .main-content header .admin-info {
+  header .search-wrapper {
+    width: 230px;
+  }
+  header .admin-wrapper img {
+    margin-right: 0;
+  }
+  header .admin-info {
     display: none;
   }
-  .main-content main .main-element .card-container {
+  main {
+    margin-top: 100px;
+  }
+  main .two-column--primary .main-element .card-main-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     gap: 20px;
   }
-  .main-content main .aside-element .social-source {
-    width: 100%;
+  main .two-column--primary .aside-element {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+  main .two-column--primary .aside-element .card-aside {
+    margin-bottom: 20px;
+  }
+  main .two-column--primary .aside-element .total-sale {
+    margin-top: -10px;
+  }
+  footer .icon-wrapper .icon span {
+    height: 20px;
+    width: 20px;
+  }
+  footer .icon-wrapper .icon span i {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

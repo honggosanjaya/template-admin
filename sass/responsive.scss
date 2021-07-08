@@ -1,11 +1,8 @@
 @media only screen and (max-width: 960px) {
-  .main-content {
-    main {
-      padding: 32px 20px;
-      .two-view {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
+  main {
+    .two-column--primary {
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
 
       .main-element {
         width: 100%;
@@ -21,15 +18,19 @@
       .aside-element {
         margin-top: 30px;
         width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
 
-        .card-income.expences {
-          margin-top: 30px;
-        }
-
-        .social-source {
-          margin-top: 30px;
+        .total-sale {
+          margin-top: 0;
         }
       }
+    }
+
+    .two-column--secondary {
+      grid-template-columns: 1fr;
+      grid-row-gap: 20px;
     }
   }
 }
@@ -39,69 +40,86 @@
     font-size: 14px;
   }
 
-  .main-content {
-    header {
-      .icon-wrapper .bi,
-      .header-brand {
-        display: none;
+  header {
+    .icon-wrapper .bi,
+    .header-brand {
+      display: none;
+    }
+
+    .admin-wrapper {
+      .ellipse {
+        bottom: 0;
+      }
+    }
+  }
+
+  main {
+    .two-column--secondary {
+      .left-element {
+        .graph {
+          margin-top: 30px;
+          padding: 15px;
+        }
       }
 
-      .admin-wrapper {
-        .ellipse {
-          bottom: 0;
+      .right-element {
+        .social-source {
+          margin-top: 10px;
         }
       }
     }
 
-    main {
-      .table {
-        width: 100%;
-        .table__body {
-          thead {
-            clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px;
-          }
+    .table {
+      width: 100%;
+      .table__body {
+        thead {
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
 
-          tr {
-            display: block;
-            margin-bottom: 15px;
-          }
+        tr {
+          display: block;
+          margin-bottom: 15px;
+        }
 
-          td {
-            display: block;
-            text-align: right;
-            border-top: none;
-            border-bottom: 1px solid #f0f0f0;
-          }
+        td {
+          display: block;
+          text-align: right;
+          border-top: none;
+          border-bottom: 1px solid #f0f0f0;
+        }
 
-          td::before {
-            content: attr(data);
-            float: left;
-            font-weight: 700;
-          }
+        td::before {
+          content: attr(data);
+          float: left;
+          font-weight: 700;
+        }
 
-          td:last-child {
-            border-bottom: 2px solid #c7c7c7;
-            justify-content: space-between;
+        td:last-child {
+          border-bottom: 2px solid #c7c7c7;
+          justify-content: space-between;
 
-            span {
-              display: none;
-            }
+          span {
+            display: none;
           }
         }
       }
+    }
+  }
 
-      .aside-element {
-        .coba {
-          grid-template-columns: 1fr;
-
-          .piechart {
-            width: 100%;
+  footer {
+    .icon-wrapper {
+      .icon {
+        span {
+          height: 30px;
+          width: 30px;
+          i {
+            font-size: 1.2rem;
           }
         }
       }
@@ -114,27 +132,55 @@
     font-size: 12px;
   }
 
-  .main-content {
-    header {
-      .search-wrapper {
-        width: 200px;
-      }
-      .admin-info {
-        display: none;
+  header {
+    padding: 10px;
+    .search-wrapper {
+      width: 230px;
+    }
+    .admin-wrapper {
+      img {
+        margin-right: 0;
       }
     }
+    .admin-info {
+      display: none;
+    }
+  }
 
-    main {
+  main {
+    margin-top: 100px;
+    .two-column--primary {
       .main-element {
-        .card-container {
+        .card-main-container {
           grid-template-columns: 1fr;
           gap: 20px;
         }
       }
 
       .aside-element {
-        .social-source {
-          width: 100%;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+
+        .card-aside {
+          margin-bottom: 20px;
+        }
+
+        .total-sale {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+  footer {
+    .icon-wrapper {
+      .icon {
+        span {
+          height: 20px;
+          width: 20px;
+          i {
+            font-size: 1rem;
+          }
         }
       }
     }

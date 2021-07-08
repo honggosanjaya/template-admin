@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="./css/darkmode.css" />
   </head>
   <body>
     <input type="checkbox" id="nav-toggle" />
@@ -19,6 +19,12 @@
         <label for="nav-toggle">
           <i class="bi bi-list"></i>
         </label>
+      </div>
+
+      <div class="darkmode-toggle" id="darkmode-toggle">
+        <i class="bi bi-brightness-high-fill"></i>
+        <p>Light mode</p>
+        <span class="darkmode-switch"></span>
       </div>
 
       <div class="sidebar-menu">
@@ -92,12 +98,10 @@
         <div class="header-brand">
           <img src="./img/stock-logo.png" alt="" />
         </div>
-
         <div class="search-wrapper">
           <i class="bi bi-search"></i>
-          <input type="search" placeholder="Search" />
+          <input type="search" onfocusout="focusOutStyle()" placeholder="Search" onfocus="focusStyle()" />
         </div>
-
         <div class="admin-wrapper">
           <img src="./img/alex-suprun.jpg" alt="" />
           <div class="ellipse"></div>
@@ -109,159 +113,64 @@
       </header>
 
       <main>
-        <div class="two-view">
+        <section class="two-column--primary">
           <section class="main-element">
-            <div class="card-container" data-aos="fade-in">
-              <div class="card card__earning">
+            <!-- cardMain-container -->
+            <div class="card-main-container" data-aos="fade-in">
+              <!-- card income -->
+              <div class="card-main card__income--darkpurple">
                 <div class="card-icon">
                   <i class="bi bi-cash-coin"></i>
                   <i class="bi bi-three-dots"></i>
                 </div>
-                <div>
-                  <h1 class="counter" data-target="500">0</h1>
-                </div>
+                <h1 class="counter" data-target="500">0</h1>
                 <h2>Total Income</h2>
               </div>
-
-              <div class="card card__expences">
+              <!-- card-expences -->
+              <div class="card-main card__expences--lightblue">
                 <div class="card-icon">
                   <i class="bi bi-cash-stack"></i>
                   <i class="bi bi-three-dots"></i>
                 </div>
-                <div>
-                  <h1 class="counter" data-target="300">0</h1>
-                </div>
+                <h1 class="counter" data-target="300">0</h1>
                 <h2>Total Expences</h2>
               </div>
-
-              <div class="card card__cash">
+              <!-- card cash -->
+              <div class="card-main card__cash--lightpurple">
                 <div class="card-icon">
                   <i class="bi bi-wallet2"></i>
                   <i class="bi bi-three-dots"></i>
                 </div>
-                <div>
-                  <h1 class="counter" data-target="100">0</h1>
-                </div>
+                <h1 class="counter" data-target="100">0</h1>
                 <h2>Cash on Hand</h2>
               </div>
-
-              <div class="card card__order">
+              <!-- card-order -->
+              <div class="card-main card__order--darkblue">
                 <div class="card-icon">
                   <i class="bi bi-bag-check"></i>
                   <i class="bi bi-three-dots"></i>
                 </div>
-                <div>
-                  <h1 class="counter" data-target="1000">0</h1>
-                </div>
+                <h1 class="counter" data-target="1000">0</h1>
                 <h2>Total Order</h2>
               </div>
             </div>
           </section>
 
           <aside class="aside-element" data-aos="fade-left" data-aos-duration="2000">
-            <div class="card-income income">
-              <i class="bi bi-bank"></i>
-              <div>
-                <h2>$500</h2>
-                <p>Total Income</p>
-              </div>
-            </div>
-
-            <div class="card-income expences">
-              <i class="bi bi-shop-window"></i>
-              <div>
-                <h2>$300</h2>
-                <p>Total Expences</p>
-              </div>
-            </div>
-
-            <div id="piechart"></div>
-          </aside>
-        </div>
-
-        <div class="two-view">
-          <section>
-            <div class="graph" data-aos="fade-up">
-              <h1>Total Profit Report</h1>
-              <canvas id="lineChart"></canvas>
-            </div>
-
-            <div class="graph sales-graph" data-aos="fade-up">
-              <h1>Product Sales Report</h1>
-              <canvas id="barChart"></canvas>
-            </div>
-          </section>
-
-          <section class="aside-element" data-aos="fade-left" data-aos-duration="2000">
-            <div class="social-source">
-              <div class="social-source__header">
-                <h1>Sales By Social Source</h1>
-              </div>
-              <div class="sales facebook">
-                <div class="social-media">
-                  <div class="tooltip">Facebook</div>
-                  <i class="bi bi-facebook"></i>
-                  <h3>Facebook</h3>
-                </div>
-                <div class="social-sales">
-                  <h3>500 sales</h3>
+            <div class="card-aside-container">
+              <div class="card-aside">
+                <i class="bi bi-bank"></i>
+                <div>
+                  <h2>$500</h2>
+                  <p>Total Income</p>
                 </div>
               </div>
-              <div class="sales instagram">
-                <div class="social-media">
-                  <div class="tooltip">Instagram</div>
-                  <i class="bi bi-instagram"></i>
-                  <h3>Instagram</h3>
+              <div class="card-aside">
+                <i class="bi bi-shop-window"></i>
+                <div>
+                  <h2>$300</h2>
+                  <p>Total Expences</p>
                 </div>
-                <div class="social-sales">
-                  <h3>500 sales</h3>
-                </div>
-              </div>
-              <div class="sales whatsapp">
-                <div class="social-media">
-                  <div class="tooltip">Whatsapp</div>
-                  <i class="bi bi-whatsapp"></i>
-                  <h3>Whatsapp</h3>
-                </div>
-                <div class="social-sales">
-                  <h3>900 sales</h3>
-                </div>
-              </div>
-              <div class="sales twitter">
-                <div class="social-media">
-                  <div class="tooltip">Twitter</div>
-                  <i class="bi bi-twitter"></i>
-                  <h3>Twitter</h3>
-                </div>
-                <div class="social-sales">
-                  <h3>300 sales</h3>
-                </div>
-              </div>
-              <div class="sales youtube">
-                <div class="social-media">
-                  <div class="tooltip">Youtube</div>
-                  <i class="bi bi-youtube"></i>
-                  <h3>Youtube</h3>
-                </div>
-                <div class="social-sales">
-                  <h3>360 sales</h3>
-                </div>
-              </div>
-              <div class="sales online-marketplace">
-                <div class="social-media">
-                  <div class="tooltip">
-                    Online <br />
-                    Marketplace
-                  </div>
-                  <i class="bi bi-shop"></i>
-                  <h3>Online Marketplace</h3>
-                </div>
-                <div class="social-sales">
-                  <h3>1000 sales</h3>
-                </div>
-              </div>
-              <div class="sales-detail">
-                <p>View Details <i class="bi bi-arrow-right"></i></p>
               </div>
             </div>
 
@@ -279,13 +188,105 @@
                 </div>
               </div>
             </div>
-          </section>
-        </div>
+          </aside>
+        </section>
+
+        <section class="two-column--secondary">
+          <div class="left-element">
+            <div class="graph">
+              <h1>Total Profit Report</h1>
+              <canvas id="profit-report"></canvas>
+            </div>
+            <div class="graph">
+              <h1>Product Sales Report</h1>
+              <canvas id="sales-report"></canvas>
+            </div>
+          </div>
+
+          <div class="right-element" data-aos="fade-left" data-aos-duration="2000">
+            <div class="social-source">
+              <h1 class="title">Sales By Social Source</h1>
+              <div class="sales-container">
+                <div class="sales facebook">
+                  <div class="social-media">
+                    <div class="tooltip">Facebook</div>
+                    <i class="bi bi-facebook"></i>
+                    <h3>Facebook</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>500 sales</h3>
+                  </div>
+                </div>
+                <div class="sales instagram">
+                  <div class="social-media">
+                    <div class="tooltip">Instagram</div>
+                    <i class="bi bi-instagram"></i>
+                    <h3>Instagram</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>500 sales</h3>
+                  </div>
+                </div>
+                <div class="sales whatsapp">
+                  <div class="social-media">
+                    <div class="tooltip">Whatsapp</div>
+                    <i class="bi bi-whatsapp"></i>
+                    <h3>Whatsapp</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>900 sales</h3>
+                  </div>
+                </div>
+                <div class="sales twitter">
+                  <div class="social-media">
+                    <div class="tooltip">Twitter</div>
+                    <i class="bi bi-twitter"></i>
+                    <h3>Twitter</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>300 sales</h3>
+                  </div>
+                </div>
+                <div class="sales youtube">
+                  <div class="social-media">
+                    <div class="tooltip">Youtube</div>
+                    <i class="bi bi-youtube"></i>
+                    <h3>Youtube</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>360 sales</h3>
+                  </div>
+                </div>
+                <div class="sales online-marketplace">
+                  <div class="social-media">
+                    <div class="tooltip">
+                      Online <br />
+                      Marketplace
+                    </div>
+                    <i class="bi bi-shop"></i>
+                    <h3>Online Marketplace</h3>
+                  </div>
+                  <div class="social-sales">
+                    <h3>1000 sales</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="sales-detail">
+                <p>View Details <i class="bi bi-arrow-right"></i></p>
+              </div>
+            </div>
+
+            <div class="piechart">
+              <h1 class="title">Product Category</h1>
+              <canvas id="product-category"></canvas>
+            </div>
+          </div>
+        </section>
 
         <div class="table" data-aos="fade-up">
           <div class="table__header">
-            <h1>Recent Orders</h1>
-            <button class="button button--mimas"><span>Show All</span></button>
+            <h1 class="title">Recent Orders</h1>
+            <button type="button" class="button button--mimas"><span>Show All</span></button>
           </div>
           <div class="table__body">
             <table>

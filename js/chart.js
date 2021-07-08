@@ -1,81 +1,46 @@
-let lineChart = document.getElementById("lineChart").getContext("2d");
-
-let totalProfitChart = new Chart(lineChart, {
+var profitReport = document.getElementById("profit-report").getContext("2d");
+var chart = new Chart(profitReport, {
   type: "line",
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
       {
-        label: "Total Profit 2021",
-        data: [475, 350, 290, 580, 880, 600, 1025],
-        backgroundColor: ["royalblue", "orange", "yellow ", "purple", "red", "green", "aqua"],
-        borderWidth: 1,
-        borderColor: "#666",
-        hoverBorderWidth: 2,
-        hoverBorderColor: "#000",
+        label: "Profit in 2021",
+        backgroundColor: "#fff",
+        borderColor: "#4f48ec",
+        data: [475, 350, 300, 550, 875, 600, 1010],
       },
     ],
   },
-  options: {
-    responsive: true,
-    layout: {
-      padding: {
-        left: 10,
-        right: 0,
-        bottom: 0,
-        top: 0,
-      },
-    },
-  },
 });
 
-let barChart = document.getElementById("barChart").getContext("2d");
-
-let totalOrderChart = new Chart(barChart, {
+var salesReport = document.getElementById("sales-report").getContext("2d");
+var chart = new Chart(salesReport, {
   type: "bar",
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
       {
-        label: "Product Sales 2021",
-        data: [475, 350, 290, 580, 880, 600, 1025],
-        backgroundColor: ["#ef5350", "#ec407a", "#ba68c8 ", "#9575cd", "#7986cb ", "#64b5f6", "#f0f4c3"],
-        borderWidth: 1,
-        borderColor: "#666",
-        hoverBorderWidth: 2,
-        hoverBorderColor: "#000",
+        label: "Product Sales in 2021",
+        backgroundColor: ["rgba(255, 99, 132, 0.5)", "rgba(255, 159, 64, 0.5)", "rgba(255, 205, 86, 0.5)", "rgba(75, 192, 192, 0.5)", "rgba(54, 162, 235, 0.5)", "rgba(153, 102, 255, 0.5)", "rgba(201, 203, 207, 0.5)"],
+        borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(54, 162, 235)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+        data: [450, 374, 250, 550, 900, 600, 1010],
       },
     ],
   },
-  options: {
-    responsive: true,
-  },
 });
 
-// Pie Chart
-google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ["Category", "Quantity"],
-    ["Man", 40],
-    ["Woman", 15],
-    ["Kid", 15],
-    ["Accessories", 30],
-  ]);
-
-  var options = {
-    backgroundColor: "transparent",
-    title: "Product Category",
-    titleTextStyle: {
-      color: "#00567e",
-      fontSize: 14,
-      bold: true,
-    },
-  };
-
-  var chart = new google.visualization.PieChart(document.getElementById("piechart"));
-
-  chart.draw(data, options);
-}
+var productCategory = document.getElementById("product-category").getContext("2d");
+var chart = new Chart(productCategory, {
+  type: "pie",
+  data: {
+    labels: ["Man", "Woman", "Kid", "Accessorie"],
+    datasets: [
+      {
+        label: "Product Sales in 2021",
+        backgroundColor: ["#3366cc", "#dc3912", "#ff9900", "#109618"],
+        data: [450, 374, 250, 550],
+      },
+    ],
+  },
+});

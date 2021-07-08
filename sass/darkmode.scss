@@ -1,0 +1,138 @@
+@import "./variable";
+
+body.dark {
+  background-color: $darkmode-color;
+  .title {
+    background: linear-gradient(to right, rgb(170, 255, 248));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sidebar {
+    background-color: $darkmode-color;
+    color: #fff;
+
+    .sidebar-menu {
+      a.active,
+      a:hover {
+        background-color: $darkmodeblue;
+      }
+    }
+  }
+
+  header {
+    background-color: $darkmode-color;
+    color: #fff;
+    box-shadow: 0 4px 3px -2px rgba(50, 50, 50, 0.75);
+
+    .search-wrapper {
+      background-color: #302f33;
+      ::placeholder {
+        color: #fff;
+      }
+    }
+  }
+
+  main {
+    .two-column--primary {
+      .main-element {
+        .card-main-container {
+          .card-main {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          }
+        }
+      }
+    }
+
+    .aside-element {
+      .card-aside,
+      .total-sale {
+        background-color: $darkmodeblue;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        &:hover {
+          background-color: $lightmodeblue;
+        }
+      }
+
+      .card-aside {
+        i {
+          background-color: $lightmodeblue;
+        }
+      }
+    }
+
+    .left-element {
+      .graph {
+        background-color: $darkmodeblue;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+        &:hover {
+          background-color: $lightmodeblue;
+        }
+
+        canvas {
+          background-color: $darkmode-color;
+        }
+      }
+    }
+
+    .right-element {
+      .social-source,
+      .piechart {
+        background-color: $darkmodeblue;
+        color: #fff;
+
+        &:hover {
+          background-color: $lightmodeblue;
+        }
+      }
+
+      .social-source {
+        .sales-detail {
+          p {
+            color: rgb(7, 255, 222);
+          }
+        }
+
+        .sales {
+          .social-media {
+            i.bi-facebook {
+              color: $lightmodeblue;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $lightmodeblue;
+
+          .sales {
+            .social-media {
+              i.bi-facebook {
+                color: $facebook;
+              }
+            }
+          }
+        }
+      }
+
+      .piechart {
+        canvas {
+          background-color: $darkmode-color;
+        }
+      }
+    }
+
+    .table {
+      background-color: $darkmodeblue;
+      color: #fff;
+    }
+  }
+
+  footer {
+    background-color: $darkmode-color;
+    color: #fff;
+    box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+  }
+}
