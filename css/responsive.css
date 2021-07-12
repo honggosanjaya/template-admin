@@ -43,6 +43,9 @@
   header .admin-wrapper .ellipse {
     bottom: 0;
   }
+  header .admin-details {
+    width: 300px;
+  }
   main .two-column--secondary .left-element .graph {
     margin-top: 30px;
     padding: 15px;
@@ -65,6 +68,9 @@
   main .table .table__body tr {
     display: block;
     margin-bottom: 15px;
+  }
+  main .table .table__body tr:hover {
+    background-color: transparent;
   }
   main .table .table__body td {
     display: block;
@@ -99,19 +105,37 @@
   html {
     font-size: 12px;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
   header {
     padding: 10px;
   }
   header .search-wrapper {
-    width: 230px;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  header .search-wrapper.active {
+    border-radius: 10px;
+    width: 200px;
+  }
+  header .search-wrapper .cancel-icon {
+    font-size: 1.5rem;
   }
   header .admin-wrapper img {
     margin-right: 0;
   }
-  header .admin-info {
-    display: none;
+  header .admin-details {
+    width: 250px;
+    top: 70px;
+    right: 5px;
   }
   main {
+    padding: 0 10px;
     margin-top: 100px;
   }
   main .two-column--primary .main-element .card-main-container {
@@ -130,12 +154,41 @@
   main .two-column--primary .aside-element .total-sale {
     margin-top: -10px;
   }
+  main .chat {
+    bottom: 0px;
+    right: 0px;
+  }
+  main .chat #chat-start:checked ~ .chat-wrapper {
+    bottom: 60px;
+  }
+  main .chat label {
+    right: 10px;
+    bottom: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+  }
+  main .chat .chat-wrapper {
+    right: 10px;
+    max-width: 285px;
+  }
+  main .chat .chat-wrapper .chat-wrapper__body .chat-message {
+    padding: 10px 15px;
+    min-height: 280px;
+    max-height: 280px;
+  }
   footer .icon-wrapper .icon span {
     height: 20px;
     width: 20px;
   }
   footer .icon-wrapper .icon span i {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  main {
+    padding: 0 0;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

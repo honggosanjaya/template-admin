@@ -258,16 +258,12 @@ header {
     overflow-x: hidden;
     padding: 0 15px;
 
-    i:first-child {
-      font-size: 1rem;
-      margin-right: 15px;
+    .search-icon {
+      font-size: 1.5rem;
     }
 
-    i:last-child {
-      background-color: #ede7f6;
-      padding: 5px 10px;
-      border-radius: 10px;
-      font-size: 1.5rem;
+    .cancel-icon {
+      display: none;
     }
 
     input {
@@ -288,7 +284,7 @@ header {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      margin-right: 15px;
+      margin-right: 5px;
     }
     .ellipse {
       background-color: green;
@@ -299,6 +295,19 @@ header {
       left: 30px;
       bottom: 5px;
     }
+
+    i.bi-chevron-down {
+      margin-right: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .down-animation {
+      transform: rotateZ(-180deg);
+      transition: -webkit-transform 0.8s ease-in-out;
+      -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    }
+
     h4 {
       font-size: 1rem;
     }
@@ -306,6 +315,107 @@ header {
       display: inline-block;
       font-size: 0.8rem;
     }
+  }
+
+  .admin-details {
+    width: 350px;
+    border-radius: 10px;
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    .admin-description {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: $lightmodeblue;
+      border-radius: 10px 10px 0 0;
+      color: #fff;
+      padding: 20px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 25px;
+      }
+      button {
+        border: 0;
+        padding: 10px;
+        border-radius: 30px;
+        background-color: #dc3545;
+        color: #fff;
+        font-size: 0.9rem;
+      }
+    }
+
+    .admin-info {
+      padding: 10px 20px;
+      h3 {
+        font-size: 1rem;
+        padding: 5px 0;
+        font-weight: 400;
+        color: darkblue;
+      }
+
+      h3:first-child,
+      h3:last-child {
+        text-transform: uppercase;
+        color: #5f5f5f;
+      }
+    }
+
+    .admin-message {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 15px;
+      text-align: center;
+      gap: 10px;
+      border-top: 1px solid #dfdfdf;
+      border-bottom: 1px solid #dfdfdf;
+
+      .inbox,
+      .ticket {
+        font-size: 0.8rem;
+      }
+
+      .inbox {
+        color: rgb(255, 166, 0);
+      }
+
+      .ticket {
+        color: #dc3545;
+      }
+
+      i.bi {
+        font-size: 2rem;
+      }
+    }
+
+    button {
+      display: block;
+      padding: 10px 15px;
+      margin: 15px auto;
+      border: 0;
+      background-color: $lightmodeblue;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+  }
+
+  .m-fadeOut {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 500ms, opacity 500ms linear;
+  }
+
+  .m-fadeIn {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 500ms linear;
   }
 }
 
@@ -816,6 +926,153 @@ main {
 
       tr:hover {
         background-color: rgba(7, 255, 222, 0.2);
+      }
+    }
+  }
+
+  .chat {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99999;
+
+    #chat-start {
+      display: none;
+      &:checked ~ .chat-wrapper {
+        opacity: 1;
+        bottom: 85px;
+        pointer-events: auto;
+      }
+    }
+
+    label {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+      height: 55px;
+      width: 55px;
+      background-color: #a66dd4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .chat-wrapper {
+      position: absolute;
+      right: 30px;
+      bottom: 0px;
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+      .chat-wrapper__header {
+        background-color: #a66dd4;
+        border-radius: 10px 10px 0 0;
+        color: #fff;
+        font-size: 1rem;
+        padding: 15px;
+      }
+
+      .chat-wrapper__body {
+        .chat-message {
+          padding: 20px 15px;
+          min-height: 350px;
+          max-height: 350px;
+          overflow-y: auto;
+
+          .inbox {
+            width: 100%;
+            display: flex;
+            align-items: baseline;
+
+            .icon {
+              height: 2.5em;
+              width: 2.5em;
+              color: #fff;
+              text-align: center;
+              line-height: 2.5em;
+              border-radius: 50%;
+              font-size: 1.1rem;
+              background-color: #a66dd4;
+            }
+
+            .message {
+              max-width: 60%;
+              margin-left: 10px;
+              p {
+                color: #fff;
+                background-color: #a66dd4;
+                border-radius: 10px;
+                padding: 8px 10px;
+                font-size: 0.8rem;
+                word-break: break-all;
+              }
+            }
+          }
+
+          .user-inbox {
+            justify-content: flex-end;
+            margin: 13px 0;
+
+            .message {
+              p {
+                color: #333;
+                background: rgb(235, 235, 235);
+              }
+            }
+          }
+        }
+
+        .typing-field {
+          display: flex;
+          height: 60px;
+          width: 100%;
+          align-items: center;
+          justify-content: space-evenly;
+          border-top: 1px solid lightgray;
+          border-radius: 0 0 5px 5px;
+
+          .input-data {
+            height: 40px;
+            width: 335px;
+            position: relative;
+
+            input {
+              height: 100%;
+              width: 100%;
+              outline: none;
+              border: 1px solid transparent;
+              padding: 0 80px 0 15px;
+              border-radius: 3px;
+              font-size: 0.9rem;
+              background-color: #fff;
+              transition: all 0.3s ease;
+            }
+
+            button {
+              position: absolute;
+              right: 10px;
+              border-radius: 50%;
+              color: #a66dd4;
+              font-size: 2rem;
+              transform: rotate(40deg);
+              background-color: transparent;
+              border: 0;
+            }
+
+            button:hover {
+              opacity: 0.7;
+            }
+          }
+        }
       }
     }
   }

@@ -99,16 +99,51 @@
           <img src="./img/stock-logo.png" alt="" />
         </div>
         <div class="search-wrapper">
-          <i class="bi bi-search"></i>
           <input type="search" onfocusout="focusOutStyle()" placeholder="Search" onfocus="focusStyle()" />
+          <div class="search-icon">
+            <i class="bi bi-search"></i>
+          </div>
+          <div class="cancel-icon">
+            <i class="bi bi-x-circle"></i>
+          </div>
         </div>
+
         <div class="admin-wrapper">
           <img src="./img/alex-suprun.jpg" alt="" />
           <div class="ellipse"></div>
-          <div class="admin-info">
+          <i class="bi bi-chevron-down"></i>
+          <div class="admin-name">
             <h4>Alex Suprun</h4>
-            <small>Admin</small>
+            <small>SUper Admin</small>
           </div>
+        </div>
+
+        <div class="admin-details m-fadeOut">
+          <div class="admin-description">
+            <img src="./img/alex-suprun.jpg" alt="" />
+            <div>
+              <h4>Alex Suprun</h4>
+              <small>Super Admin</small>
+            </div>
+            <button type="button"><i class="bi bi-box-arrow-right"></i> Logout</button>
+          </div>
+          <div class="admin-info">
+            <h3>Activity</h3>
+            <h3>Chat</h3>
+            <h3>Recover Password</h3>
+            <h3>My Account</h3>
+          </div>
+          <div class="admin-message">
+            <div class="inbox">
+              <i class="bi bi-envelope-open"></i>
+              <h3>Message Inbox</h3>
+            </div>
+            <div class="ticket">
+              <i class="bi bi-tags"></i>
+              <h3>Support Tickets</h3>
+            </div>
+          </div>
+          <button type="button">Open Messages</button>
         </div>
       </header>
 
@@ -184,7 +219,7 @@
                   <div class="mask half">
                     <div class="fill"></div>
                   </div>
-                  <div class="inside-circle">70%</div>
+                  <div class="inside-circle">70 %</div>
                 </div>
               </div>
             </div>
@@ -283,7 +318,7 @@
           </div>
         </section>
 
-        <div class="table" data-aos="fade-up">
+        <section class="table" data-aos="fade-up">
           <div class="table__header">
             <h1 class="title">Recent Orders</h1>
             <button type="button" class="button button--mimas"><span>Show All</span></button>
@@ -344,7 +379,60 @@
               </tbody>
             </table>
           </div>
-        </div>
+        </section>
+
+        <section class="chat">
+          <input type="checkbox" id="chat-start" />
+          <label for="chat-start">
+            <i class="bi bi-chat-dots-fill"></i>
+          </label>
+
+          <div class="chat-wrapper">
+            <div class="chat-wrapper__header">
+              <span class="bi bi-person-fill"> Honggo Sanjaya</span>
+            </div>
+            <div class="chat-wrapper__body">
+              <div class="chat-message">
+                <div class="inbox">
+                  <div class="icon">
+                    <i class="bi bi-person-fill"></i>
+                  </div>
+                  <div class="message">
+                    <p>Hello, what's your name?</p>
+                  </div>
+                </div>
+
+                <div class="user-inbox inbox">
+                  <div class="message">
+                    <p>Hello, my name Alex Suprun</p>
+                  </div>
+                </div>
+
+                <div class="inbox">
+                  <div class="icon">
+                    <i class="bi bi-person-fill"></i>
+                  </div>
+                  <div class="message">
+                    <p>Hi Alex. How Are you?</p>
+                  </div>
+                </div>
+
+                <div class="user-inbox inbox">
+                  <div class="message">
+                    <p>Not bad, thanks. What about you?</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="typing-field">
+                <div class="input-data">
+                  <input id="data" type="text" placeholder="Type message" required />
+                  <button><i class="bi bi-telegram"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer>
@@ -370,6 +458,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
+        disable: "phone",
         once: true,
       });
     </script>
